@@ -1,0 +1,260 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:500,300,400);
+
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #333;
+    background-color: #f8f9fa; /* Bootstrap light background */
+}
+
+a {
+    color: #3fad37;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2c8a2d; /* Slightly darker green for hover */
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* Header */
+#header {
+    background: #4dcc43;
+    overflow: auto;
+    padding: 10px 20px;
+    border-bottom: 6px solid #3fad37;
+}
+
+#header .logo {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: #fff;
+    float: left;
+}
+
+#header .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#header .menu li {
+    list-style: none;
+}
+
+#header a {
+    color: #fff;
+}
+
+#header button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Sidebar Content */
+/* .contents {
+    width: 20%;
+    padding: 15px;
+    float: left;
+    background: #343a40; /* Bootstrap dark background */
+    /* color: #fff;
+    border-right: 1px solid #ddd;
+    height: 100vh; /* Full-height sidebar */
+    /* overflow-y: auto; */ 
+/* } */ 
+
+.contents {
+    width: 35%;
+    padding: 15px;
+    background: #343a40; /* Bootstrap dark background */
+    color: #fff;
+    border-right: 1px solid #ddd;
+    height: 100vh; /* Full-height sidebar */
+    overflow-y: auto;
+}
+
+.contents ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contents ul li {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #495057; /* Darker gray for items */
+    border-radius: 4px;
+    transition: background 0.2s ease-in-out;
+}
+
+.contents ul li:hover {
+    background: #3f3f3f; /* Slightly darker on hover */
+    cursor: pointer;
+}
+
+.contents ul a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.contents ul a:hover {
+    color: #4dcc43;
+}
+
+/* Module Styles */
+/* .module {
+    padding: 20px;
+    float: left;
+    width: 65%;
+    margin-left: 25%; /* Adjusted to float beside sidebar */
+    /* background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow */
+/* } */ 
+
+.module {
+    padding: 20px;
+    width: 55%; Adjusted to fill remaining space
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Container for Contents and Module */
+#content {
+    display: grid;
+    grid-template-columns: 1 3 ;
+    grid-gap: 5px;
+    /* display: flex; Use Flexbox to align contents and module side-by-side */
+    height: 100vh; /* Full-height layout */
+}
+
+.module h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #4dcc43;
+    padding-bottom: 8px;
+}
+
+.module p {
+    margin: 10px 0 20px;
+}
+
+/* Course Modules */
+ul#course-modules {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+ul#course-modules li {
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease-in-out;
+    cursor: move;
+}
+
+ul#course-modules li:hover {
+    background: #e9ecef; /* Lighter background on hover */
+}
+
+/* Chat Section */
+#chat {
+    position: fixed;
+    top: 64px;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    background: #fff;
+    border-left: 1px solid #ddd;
+    padding: 15px;
+    overflow-y: scroll;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#chat .message {
+    background: #efefef;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: auto;
+    float: left;
+    clear: both;
+}
+
+#chat .message.me {
+    float: right;
+    background: #d4edda;
+    color: #155724;
+}
+
+#chat .date {
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Error Messages */
+.error-messages {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Form Inputs */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+input[type="submit"],
+button {
+    background-color: #4dcc43;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #3fad37;
+}

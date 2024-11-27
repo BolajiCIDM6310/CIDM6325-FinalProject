@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+{% if object %}
+Edit Portfolio "{{ object.title }}"
+{% else %}
+Create a new portfolio
+{% endif %}
+{% endblock %}
+{% block content %}
+<h1>
+    {% if object %}
+    Edit portfolio "{{ object.title }}"
+    {% else %}
+    Create a new portfolio
+    {% endif %}
+</h1>
+<div class="module">
+    <h2>Portfolio info</h2>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <p><input type="submit" value="Save portfolio"></p>
+    </form>
+</div>
+{% endblock %}

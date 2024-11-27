@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}My Portfolios{% endblock %}
+{% block content %}
+<h1>My portfolios</h1>
+<div class="module">
+    {% for port in object_list %}
+    <div class="course-info">
+        <h3>{{ port.title }}</h3>
+        <p>
+            <a href="{% url 'port_edit' course.id port.id %}">Edit</a>
+            <a href="{% url 'port_delete' course.id port.id %}">Delete</a>
+
+            <!-- Optional content management link for course modules -->
+            {% if port.course.stud_modules.count > 0 %}
+            <a href="{% url 'portfolio_content_list' port.id %}">
+                Manage contents
+            </a>
+            {% endif %}
+        </p>
+    </div>
+    {% empty %}
+    <p>You haven't created any portfolio yet.</p>
+    {% endfor %}
+    <p>
+        <a href="{% url 'port_create' course.id %}" class="button">Create new Portfolio</a>
+    </p>
+</div>
+{% endblock %}  
